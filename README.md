@@ -1,43 +1,63 @@
-# Astro Starter Kit: Minimal
+# 🇹🇷 Learn Turkish (learn-turkish.io)
 
-```sh
-yarn create astro@latest -- --template minimal
+A premium, interactive web application designed to help users master the Turkish language through a structured, data-driven approach.
+
+## 🚀 Key Features
+
+- **🧩 Agglutination Visualizer**: A unique tool to understand how Turkish suffixes attach to word roots in real-time.
+- **📚 Comprehensive Content**: Structured YAML-based content for Words, Grammar, Suffixes, and Example Sentences.
+- **🧠 Practice Modes**:
+  - **Flashcards**: Quick-fire memory training.
+  - **Quiz Engine**: Test your knowledge on grammar and vocabulary.
+  - **Sentence Builder**: Interactive drag-and-drop tool to construct Turkish sentences.
+- **🔍 Advanced Search**: Find any word or suffix instantly using Fuse.js.
+- **🌍 Multi-language Support**: Interface available in English, Arabic, and Turkish.
+- **📊 Progress Tracking**: Built-in persistence to save your learning journey.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Astro 6.0](https://astro.build/) (Static Site Generation)
+- **UI Components**: [Preact](https://preactjs.com/) for high-performance interactivity.
+- **Styling**: [Tailwind CSS 4.0](https://tailwindcss.com/) for a modern, responsive design.
+- **State Management**: Nanostores for lightweight reactive state.
+- **Deployment**: Optimized for [Netlify](https://www.netlify.com/).
+
+## 🚦 Getting Started
+
+### Prerequisites
+- Node.js (>= 22.12.0)
+- Yarn
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/nhussein2026/learn-turkish.git
+
+# Install dependencies
+yarn install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+### Development
+```bash
+# Start the local development server
+yarn dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Build
+```bash
+# Build for production
+yarn build
+```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🌐 Deployment
 
-Any static assets, like images, can be placed in the `public/` directory.
+This project is configured for **Netlify**. 
 
-## 🧞 Commands
+1. Push your changes to GitHub.
+2. Connect your repo to Netlify.
+3. Use the following settings (automatically handled by `netlify.toml`):
+   - **Build Command**: `yarn build`
+   - **Publish Directory**: `dist`
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `yarn install`             | Installs dependencies                            |
-| `yarn dev`             | Starts local dev server at `localhost:4321`      |
-| `yarn build`           | Build your production site to `./dist/`          |
-| `yarn preview`         | Preview your build locally, before deploying     |
-| `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `yarn astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+*Created by [Naser](https://github.com/nhussein2026)*
