@@ -1,0 +1,36 @@
+id: yemek
+turkish: yemek
+pos: verb
+translations:
+  en: "to eat"
+  ar: "يأكل"
+cefr: A1
+frequencyRank: 35
+root: "ye-"
+relatedWords: ["yemek-noun", "yiyecek"]
+tags: ["essential", "core-100"]
+categories: ["food-drink", "daily-life"]
+morphology:
+  root: "ye"
+  suffixExamples:
+    - form: "yiyorum"
+      suffixes: ["-iyor", "-um"]
+      meaning:
+        en: "I am eating"
+        ar: "أنا آكل"
+    - form: "yedi"
+      suffixes: ["-di"]
+      meaning:
+        en: "he/she ate"
+        ar: "أكل / أكلت"
+    - form: "yiyecek"
+      suffixes: ["-ecek"]
+      meaning:
+        en: "he/she will eat"
+        ar: "سوف يأكل"
+  conjugation:
+    type: irregular
+    group: "vowel drop"
+exampleSentences: ["s010"]
+meta:
+  verified: true

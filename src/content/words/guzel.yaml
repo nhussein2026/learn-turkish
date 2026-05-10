@@ -1,0 +1,33 @@
+id: guzel
+turkish: güzel
+pos: adjective
+translations:
+  en: "beautiful, nice, good"
+  ar: "جميل، حسن"
+cefr: A1
+frequencyRank: 30
+root: "güzel"
+relatedWords: ["güzellik", "güzelce"]
+tags: ["essential", "core-100", "descriptive"]
+categories: ["descriptions", "daily-life"]
+morphology:
+  root: "güzel"
+  suffixExamples:
+    - form: "güzeller"
+      suffixes: ["-ler"]
+      meaning:
+        en: "beautiful ones"
+        ar: "الجميلات / الجميلون"
+    - form: "güzellik"
+      suffixes: ["-lik"]
+      meaning:
+        en: "beauty"
+        ar: "جمال"
+    - form: "güzelce"
+      suffixes: ["-ce"]
+      meaning:
+        en: "nicely, beautifully"
+        ar: "بشكل جميل"
+exampleSentences: ["s008"]
+meta:
+  verified: true

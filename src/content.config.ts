@@ -1,16 +1,34 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { WordSchema } from './schemas/word';
+import { SentenceSchema } from './schemas/sentence';
+import { GrammarSchema } from './schemas/grammar';
+import { SuffixSchema } from './schemas/suffix';
+import { CategorySchema } from './schemas/category';
 
-const lessons = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/lessons" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    sourceLang: z.enum(['en', 'ar']),
-    skill: z.enum(['reading', 'writing', 'listening', 'speaking', 'grammar', 'vocabulary']),
-    level: z.enum(['A1', 'A2', 'B1', 'B2', 'C1', 'C2']),
-    order: z.number().optional(),
-  }),
+const words = defineCollection({
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/words" }),
+  schema: WordSchema,
 });
 
-export const collections = { lessons };
+const sentences = defineCollection({
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/sentences" }),
+  schema: SentenceSchema,
+});
+
+const grammar = defineCollection({
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/grammar" }),
+  schema: GrammarSchema,
+});
+
+const suffixes = defineCollection({
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/suffixes" }),
+  schema: SuffixSchema,
+});
+
+const categories = defineCollection({
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/categories" }),
+  schema: CategorySchema,
+});
+
+export const collections = { words, sentences, grammar, suffixes, categories };

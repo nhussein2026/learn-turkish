@@ -1,0 +1,36 @@
+id: yapmak
+turkish: yapmak
+pos: verb
+translations:
+  en: "to do, to make"
+  ar: "يفعل، يصنع"
+cefr: A1
+frequencyRank: 3
+root: "yap-"
+relatedWords: ["yapılmak", "yapım"]
+tags: ["essential", "core-100"]
+categories: ["actions", "daily-life"]
+morphology:
+  root: "yap"
+  suffixExamples:
+    - form: "yapıyorum"
+      suffixes: ["-ıyor", "-um"]
+      meaning:
+        en: "I am doing"
+        ar: "أنا أفعل"
+    - form: "yaptı"
+      suffixes: ["-tı"]
+      meaning:
+        en: "he/she did"
+        ar: "فعل / فعلت"
+    - form: "yapacak"
+      suffixes: ["-acak"]
+      meaning:
+        en: "he/she will do"
+        ar: "سوف يفعل"
+  conjugation:
+    type: regular
+    group: "a-type"
+exampleSentences: ["s006"]
+meta:
+  verified: true

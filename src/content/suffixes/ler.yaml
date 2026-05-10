@@ -1,0 +1,31 @@
+id: ler
+suffix: "-ler"
+variants: ["-lar", "-ler"]
+type: plural
+title:
+  en: "Plural Suffix"
+  ar: "لاحقة الجمع"
+explanation:
+  en: "Makes nouns plural. Follows e-type vowel harmony: -lar after back vowels (a, ı, o, u) and -ler after front vowels (e, i, ö, ü). One of the first suffixes learners encounter."
+  ar: "تجعل الأسماء جمعاً. تتبع التوافق الصوتي: -لار بعد الحروف المتحركة الخلفية، و-لِر بعد الحروف المتحركة الأمامية."
+vowelHarmony: e-type
+examples:
+  - base: "kitap"
+    result: "kitaplar"
+    meaning:
+      en: "books"
+      ar: "كتب"
+  - base: "ev"
+    result: "evler"
+    meaning:
+      en: "houses"
+      ar: "بيوت"
+  - base: "çocuk"
+    result: "çocuklar"
+    meaning:
+      en: "children"
+      ar: "أطفال"
+cefr: A1
+order: 5
+meta:
+  verified: true

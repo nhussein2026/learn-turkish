@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WordCard from '../../components/WordCard.astro';
+import { getCollection } from 'astro:content';
+
+const words = await getCollection('words');
+const sorted = words.sort((a, b) => (a.data.frequencyRank ?? 999) - (b.data.frequencyRank ?? 999));
+
+const cefrLevels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+const posTypes = [...new Set(words.map(w => w.data.pos))].sort();
+---
+
+<BaseLayout title="Vocabulary" description="Browse the Turkish word database — search by Turkish, English, or Arabic">
+  <section class="mb-8 animate-fade-in">
+    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
+      📚 <span class="gradient-text">Vocabulary</span>
+    </h1>
+    <p class="text-text-secondary text-base max-w-2xl">
+      Browse {words.length} Turkish words sorted by frequency. Click any word to see full morphology, translations, and examples.
+    </p>
+  </section>
+
+  <!-- Filters -->
+  <section class="flex flex-wrap gap-3 mb-8 animate-fade-in" style="animation-delay: 0.1s">
+    <div class="flex flex-wrap gap-1.5">
+      <span class="text-xs font-bold text-text-muted uppercase tracking-wider self-center mr-1">Level:</span>
+      {cefrLevels.map(level => {
+        const count = words.filter(w => w.data.cefr === level).length;
+        return count > 0 ? (
+          <span class={`badge cefr-${level} cursor-default`}>{level} ({count})</span>
+        ) : null;
+      })}
+    </div>
+    <div class="flex flex-wrap gap-1.5">
+      <span class="text-xs font-bold text-text-muted uppercase tracking-wider self-center mr-1">Type:</span>
+      {posTypes.map(pos => (
+        <span class={`badge pos-${pos} cursor-default`}>{pos}</span>
+      ))}
+    </div>
+  </section>
+
+  <!-- Word Grid -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 animate-slide-up" style="animation-delay: 0.15s">
+    {sorted.map((word, i) => (
+      <div style={`animation-delay: ${0.02 * i}s`}>
+        <WordCard word={word.data} />
+      </div>
+    ))}
+  </section>
+</BaseLayout>
+

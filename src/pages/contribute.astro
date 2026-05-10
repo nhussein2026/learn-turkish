@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import YamlGenerator from '../components/contribute/YamlGenerator.tsx';
+---
+
+<BaseLayout title="Contribute" description="Help expand the Turkish learning database by contributing new words and sentences.">
+  <section class="mb-12 animate-fade-in">
+    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+      🤝 <span class="gradient-text">Contribute Content</span>
+    </h1>
+    <p class="text-text-secondary text-lg max-w-2xl leading-relaxed">
+      This platform is built by the community. You can help by adding new words, sentences, or improving existing ones. Use the tool below to generate the correctly formatted YAML data.
+    </p>
+  </section>
+
+  <div class="space-y-16">
+    <section class="animate-slide-up" style="animation-delay: 0.1s">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">1</div>
+        <h2 class="text-2xl font-bold">Word Generator</h2>
+      </div>
+      <YamlGenerator client:load />
+    </section>
+
+    <section class="animate-slide-up" style="animation-delay: 0.2s">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center font-bold">2</div>
+        <h2 class="text-2xl font-bold">How to Submit</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6">
+          <h3 class="font-bold mb-3">1. Copy YAML</h3>
+          <p class="text-sm text-text-secondary">Fill out the form above and click the copy button to get the structured data.</p>
+        </div>
+        <div class="glass-card p-6">
+          <h3 class="font-bold mb-3">2. Fork & Add</h3>
+          <p class="text-sm text-text-secondary">Fork the repo on GitHub and create a new file in <code class="bg-surface-alt px-1">src/content/words/</code>.</p>
+        </div>
+        <div class="glass-card p-6">
+          <h3 class="font-bold mb-3">3. Pull Request</h3>
+          <p class="text-sm text-text-secondary">Submit a PR! Once verified by our team, your word will appear live on the site.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,89 @@
+nav:
+  home: "Home"
+  words: "Vocabulary"
+  grammar: "Grammar"
+  suffixes: "Suffixes"
+  practice: "Practice"
+  search: "Search"
+  dashboard: "Dashboard"
+
+common:
+  level: "Level"
+  frequency: "Frequency Rank"
+  root: "Root"
+  examples: "Examples"
+  relatedWords: "Related Words"
+  tags: "Tags"
+  categories: "Categories"
+  morphology: "Morphology"
+  conjugation: "Conjugation"
+  suffixExamples: "Suffix Forms"
+  translations: "Translations"
+  viewAll: "View All"
+  comingSoon: "Coming Soon"
+  search: "Search"
+  searchPlaceholder: "Search words in Turkish, English, or Arabic..."
+  noResults: "No results found"
+  loading: "Loading..."
+  back: "Back"
+  next: "Next"
+  previous: "Previous"
+  of: "of"
+  verified: "Verified"
+
+pos:
+  noun: "Noun"
+  verb: "Verb"
+  adjective: "Adjective"
+  adverb: "Adverb"
+  pronoun: "Pronoun"
+  postposition: "Postposition"
+  conjunction: "Conjunction"
+  interjection: "Interjection"
+  determiner: "Determiner"
+  particle: "Particle"
+  numeral: "Numeral"
+
+cefr:
+  A1: "Beginner"
+  A2: "Elementary"
+  B1: "Intermediate"
+  B2: "Upper Intermediate"
+  C1: "Advanced"
+  C2: "Mastery"
+
+home:
+  title: "Learn Turkish"
+  subtitle: "Master Turkish through structured, data-driven learning"
+  heroDescription: "A comprehensive platform for learning Turkish from English or Arabic. Explore vocabulary, grammar, suffixes, and practice with real sentences."
+  startLearning: "Start Learning"
+  exploreVocab: "Explore Vocabulary"
+  statsWords: "Words"
+  statsSentences: "Sentences"
+  statsGrammar: "Grammar Rules"
+  statsSuffixes: "Suffixes"
+
+words:
+  title: "Vocabulary"
+  subtitle: "Browse and search the Turkish word database"
+  filterByLevel: "Filter by Level"
+  filterByPOS: "Filter by Part of Speech"
+  allLevels: "All Levels"
+  allPOS: "All Types"
+  wordCount: "words"
+
+grammar:
+  title: "Grammar"
+  subtitle: "Turkish grammar rules explained clearly"
+
+suffixes:
+  title: "Suffixes"
+  subtitle: "The building blocks of Turkish — master the suffix system"
+  variants: "Variants"
+  vowelHarmony: "Vowel Harmony"
+  type: "Type"
+
+footer:
+  developedBy: "Developed by"
+  rights: "All Rights Reserved"
+  openSource: "Open Source on GitHub"

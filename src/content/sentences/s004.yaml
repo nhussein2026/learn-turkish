@@ -1,0 +1,11 @@
+id: s004
+turkish: "Evde kimse yok."
+translations:
+  en: "There is nobody at home."
+  ar: "لا يوجد أحد في البيت."
+cefr: A1
+wordRefs: ["ev", "yok"]
+tags: ["existence", "locative"]
+context: casual
+meta:
+  verified: true

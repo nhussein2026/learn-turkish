@@ -1,0 +1,28 @@
+id: gün
+turkish: gün
+pos: noun
+translations:
+  en: "day"
+  ar: "يوم"
+cefr: A1
+frequencyRank: 28
+root: "gün"
+relatedWords: ["bugun", "gunluk"]
+tags: ["essential", "core-100", "time"]
+categories: ["time", "daily-life"]
+morphology:
+  root: "gün"
+  suffixExamples:
+    - form: "günler"
+      suffixes: ["-ler"]
+      meaning:
+        en: "days"
+        ar: "أيام"
+    - form: "günde"
+      suffixes: ["-de"]
+      meaning:
+        en: "in a day, per day"
+        ar: "في اليوم"
+exampleSentences: []
+meta:
+  verified: true

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuizEngine from '../../components/practice/QuizEngine.tsx';
+import { getCollection } from 'astro:content';
+
+const allWords = await getCollection('words');
+const level = Astro.url.searchParams.get('level');
+
+let words = allWords;
+if (level) {
+  words = allWords.filter(w => w.data.cefr === level);
+}
+
+// Fallback if no words for level
+if (words.length < 4) {
+  words = allWords;
+}
+
+const quizWords = words.map(w => ({
+  id: w.data.id,
+  turkish: w.data.turkish,
+  en: w.data.translations.en,
+  ar: w.data.translations.ar,
+  cefr: w.data.cefr
+}));
+---
+
+<BaseLayout title="Vocabulary Quiz" description="Test your Turkish vocabulary knowledge with multiple-choice quizzes.">
+  <section class="max-w-4xl mx-auto mb-8 animate-fade-in">
+    <div class="flex items-center gap-4 mb-4">
+      <a href="/practice/" class="p-2 rounded-lg hover:bg-surface-hover text-text-muted transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+      </a>
+      <h1 class="text-3xl font-extrabold tracking-tight">
+        ✅ <span class="gradient-text">Vocabulary Quiz</span>
+      </h1>
+    </div>
+    {level && (
+      <div class="text-center mb-4">
+        <span class={`badge cefr-${level} px-4 py-1.5 text-sm`}>Focusing on {level} Level</span>
+      </div>
+    )}
+  </section>
+
+  <QuizEngine client:load words={quizWords} />
+</BaseLayout>

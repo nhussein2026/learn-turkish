@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const practiceTypes = [
+  {
+    id: 'flashcards',
+    title: 'Flashcards',
+    description: 'Classic flip-cards to memorize vocabulary.',
+    icon: '📇',
+    color: 'from-primary to-primary-dark',
+    href: '/practice/flashcards/'
+  },
+  {
+    id: 'sentence-builder',
+    title: 'Sentence Builder',
+    description: 'Master Turkish word order by building sentences.',
+    icon: '🏗️',
+    color: 'from-accent-dark to-accent',
+    href: '/practice/builder/'
+  },
+  {
+    id: 'multiple-choice',
+    title: 'Multiple Choice',
+    description: 'Test your knowledge with translation quizzes.',
+    icon: '✅',
+    color: 'from-secondary to-secondary-dark',
+    href: '/practice/quiz/'
+  },
+  {
+    id: 'listening',
+    title: 'Listening',
+    description: 'Improve your ear by hearing words and selecting meanings.',
+    icon: '🎧',
+    color: 'from-accent to-accent-dark',
+    href: '/practice/listening/'
+  }
+];
+---
+
+<BaseLayout title="Practice" description="Master Turkish with interactive flashcards and quizzes.">
+  <section class="mb-8 animate-fade-in">
+    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
+      🎯 <span class="gradient-text">Practice Turkish</span>
+    </h1>
+    <p class="text-text-secondary text-base max-w-2xl">
+      Choose a practice mode to start mastering words and grammar. Your progress will be tracked automatically.
+    </p>
+  </section>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-slide-up" style="animation-delay: 0.1s">
+    {practiceTypes.map(type => (
+      <a href={type.href} class="glass-card p-6 no-underline group block relative overflow-hidden h-full">
+        <div class={`absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b ${type.color}`}></div>
+        <div class="text-4xl mb-4 transform group-hover:scale-110 transition-transform">{type.icon}</div>
+        <h2 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{type.title}</h2>
+        <p class="text-sm text-text-secondary leading-relaxed">{type.description}</p>
+        <div class="mt-6 flex items-center text-xs font-bold text-primary uppercase tracking-widest">
+          Start Now <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <section class="mt-16 animate-slide-up" style="animation-delay: 0.2s">
+    <div class="glass-card p-8 bg-gradient-to-br from-surface to-surface-alt border-accent/20">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold mb-4">Level-Based Practice</h2>
+          <p class="text-text-secondary mb-6">
+            Want to focus on a specific proficiency level? You can start a quiz specifically for A1, A2, or higher words.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['A1', 'A2', 'B1', 'B2', 'C1'].map(level => (
+              <a href={`/practice/quiz/?level=${level}`} class={`badge cefr-${level} p-3 rounded-xl no-underline hover:scale-105 transition-transform cursor-pointer font-bold`}>
+                Start {level} Quiz
+              </a>
+            ))}
+          </div>
+        </div>
+        <div class="text-6xl opacity-20">📈</div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

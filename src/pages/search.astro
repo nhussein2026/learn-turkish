@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const words = await getCollection('words');
+
+// Build search index at build time and embed as JSON
+const searchIndex = words.map(w => ({
+  id: w.data.id,
+  turkish: w.data.turkish,
+  en: w.data.translations.en || '',
+  ar: w.data.translations.ar || '',
+  pos: w.data.pos,
+  cefr: w.data.cefr,
+  root: w.data.morphology?.root || w.data.root || '',
+  rank: w.data.frequencyRank || null,
+  tags: w.data.tags.join(' '),
+}));
+---
+
+<BaseLayout title="Search" description="Search Turkish words by Turkish, English, or Arabic — with fuzzy matching">
+  <section class="mb-8 animate-fade-in">
+    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
+      🔍 <span class="gradient-text">Search</span>
+    </h1>
+    <p class="text-text-secondary text-base max-w-2xl">
+      Search across {words.length} words in Turkish, English, or Arabic. Fuzzy matching included.
+    </p>
+  </section>
+
+  <!-- Search Input -->
+  <div class="max-w-2xl mb-8 animate-fade-in" style="animation-delay: 0.1s">
+    <div class="relative">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Type to search... (e.g. gelmek, water, يأتي)"
+        class="w-full px-5 py-4 pr-12 text-base rounded-2xl border-2 border-border-light bg-white shadow-sm focus:outline-none focus:border-primary/40 focus:shadow-glow transition-all"
+        autocomplete="off"
+      />
+      <div class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+    </div>
+    <p id="search-status" class="text-xs text-text-muted mt-2 ml-1"></p>
+  </div>
+
+  <!-- Results -->
+  <div id="search-results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <!-- Populated by JS -->
+  </div>
+
+  <!-- Initial state: show all words -->
+  <div id="all-words" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 animate-slide-up" style="animation-delay: 0.15s">
+    {words.sort((a, b) => (a.data.frequencyRank ?? 999) - (b.data.frequencyRank ?? 999)).map(word => (
+      <a href={`/words/${word.data.id}/`} class="glass-card p-4 no-underline group block" data-word-card>
+        <div class="flex items-start justify-between mb-1">
+          <h3 class="text-base font-bold text-text group-hover:text-primary transition-colors">{word.data.turkish}</h3>
+          <span class={`badge cefr-${word.data.cefr}`}>{word.data.cefr}</span>
+        </div>
+        <p class="text-sm text-text-secondary">{word.data.translations.en}</p>
+        {word.data.translations.ar && <p class="text-xs text-text-muted" dir="rtl">{word.data.translations.ar}</p>}
+      </a>
+    ))}
+  </div>
+
+  <!-- Embedded search index + Fuse.js -->
+  <script define:vars={{ searchIndex }}>
+    // Store the search index globally for the Fuse.js script below
+    window.__SEARCH_INDEX__ = searchIndex;
+  </script>
+
+  <script>
+    import Fuse from 'fuse.js';
+
+    const index = (window as any).__SEARCH_INDEX__;
+    const fuse = new Fuse(index, {
+      keys: [
+        { name: 'turkish', weight: 3 },
+        { name: 'en', weight: 2 },
+        { name: 'ar', weight: 2 },
+        { name: 'root', weight: 1.5 },
+        { name: 'tags', weight: 0.5 },
+      ],
+      threshold: 0.35,
+      includeScore: true,
+    });
+
+    const input = document.getElementById('search-input') as HTMLInputElement;
+    const resultsEl = document.getElementById('search-results')!;
+    const allWordsEl = document.getElementById('all-words')!;
+    const statusEl = document.getElementById('search-status')!;
+
+    input.addEventListener('input', () => {
+      const query = input.value.trim();
+
+      if (!query) {
+        resultsEl.innerHTML = '';
+        allWordsEl.style.display = '';
+        statusEl.textContent = '';
+        return;
+      }
+
+      allWordsEl.style.display = 'none';
+      const results = fuse.search(query, { limit: 20 });
+
+      statusEl.textContent = `${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"`;
+
+      if (results.length === 0) {
+        resultsEl.innerHTML = `
+          <div class="col-span-full text-center py-12">
+            <div class="text-4xl mb-3">🔍</div>
+            <p class="text-text-muted font-semibold">No results found for "${query}"</p>
+            <p class="text-sm text-text-muted mt-1">Try a different search term</p>
+          </div>
+        `;
+        return;
+      }
+
+      resultsEl.innerHTML = results.map(r => {
+        const w = r.item;
+        return `
+          <a href="/words/${w.id}/" class="glass-card p-4 no-underline group block">
+            <div class="flex items-start justify-between mb-1">
+              <h3 class="text-base font-bold text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">${w.turkish}</h3>
+              <span class="badge cefr-${w.cefr}">${w.cefr}</span>
+            </div>
+            <p class="text-sm text-[var(--color-text-secondary)]">${w.en}</p>
+            ${w.ar ? `<p class="text-xs text-[var(--color-text-muted)]" dir="rtl">${w.ar}</p>` : ''}
+            <div class="flex items-center gap-2 mt-2 pt-2 border-t border-[var(--color-border-light)]">
+              <span class="badge pos-${w.pos}">${w.pos}</span>
+              ${w.rank ? `<span class="text-[10px] font-bold text-[var(--color-accent-dark)] ml-auto">#${w.rank}</span>` : ''}
+            </div>
+          </a>
+        `;
+      }).join('');
+    });
+
+    // Auto-focus search input
+    input.focus();
+  </script>
+</BaseLayout>

@@ -1,0 +1,11 @@
+id: s010
+turkish: "Annem çok güzel yemek yapıyor."
+translations:
+  en: "My mother cooks very delicious food."
+  ar: "أمي تطبخ طعاماً لذيذاً جداً."
+cefr: A2
+wordRefs: ["anne", "guzel", "yemek", "yapmak"]
+tags: ["present-continuous", "family", "food"]
+context: casual
+meta:
+  verified: true

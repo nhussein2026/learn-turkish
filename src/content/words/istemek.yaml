@@ -1,0 +1,31 @@
+id: istemek
+turkish: istemek
+pos: verb
+translations:
+  en: "to want, to wish"
+  ar: "يريد"
+cefr: A1
+frequencyRank: 20
+root: "iste-"
+relatedWords: ["istek"]
+tags: ["essential", "core-100"]
+categories: ["emotions", "daily-life"]
+morphology:
+  root: "iste"
+  suffixExamples:
+    - form: "istiyorum"
+      suffixes: ["-iyor", "-um"]
+      meaning:
+        en: "I want"
+        ar: "أنا أريد"
+    - form: "istedi"
+      suffixes: ["-di"]
+      meaning:
+        en: "he/she wanted"
+        ar: "أراد / أرادت"
+  conjugation:
+    type: regular
+    group: "e-type"
+exampleSentences: []
+meta:
+  verified: true

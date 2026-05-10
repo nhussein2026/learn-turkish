@@ -1,0 +1,31 @@
+id: ecek
+suffix: "-ecek"
+variants: ["-acak", "-ecek"]
+type: tense
+title:
+  en: "Future Tense"
+  ar: "المستقبل"
+explanation:
+  en: "Used to express future actions or intentions. Follows e-type vowel harmony: -acak after back vowels (a, ı, o, u) and -ecek after front vowels (e, i, ö, ü)."
+  ar: "يُستخدم للتعبير عن الأفعال المستقبلية أو النوايا. يتبع التوافق الصوتي من النوع e: أَجاك بعد الحروف المتحركة الخلفية، وأَجِك بعد الحروف المتحركة الأمامية."
+vowelHarmony: e-type
+examples:
+  - base: "gel"
+    result: "gelecek"
+    meaning:
+      en: "he/she will come"
+      ar: "سوف يأتي/تأتي"
+  - base: "yap"
+    result: "yapacak"
+    meaning:
+      en: "he/she will do"
+      ar: "سوف يفعل/تفعل"
+  - base: "oku"
+    result: "okuyacak"
+    meaning:
+      en: "he/she will read"
+      ar: "سوف يقرأ/تقرأ"
+cefr: A1
+order: 3
+meta:
+  verified: true

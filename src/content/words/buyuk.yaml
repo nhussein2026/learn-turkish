@@ -1,0 +1,28 @@
+id: buyuk
+turkish: büyük
+pos: adjective
+translations:
+  en: "big, large, great"
+  ar: "كبير"
+cefr: A1
+frequencyRank: 18
+root: "büyük"
+relatedWords: ["kucuk", "buyumek"]
+tags: ["essential", "core-100", "descriptive"]
+categories: ["descriptions", "size"]
+morphology:
+  root: "büyük"
+  suffixExamples:
+    - form: "büyükler"
+      suffixes: ["-ler"]
+      meaning:
+        en: "elders, big ones"
+        ar: "الكبار"
+    - form: "büyüklük"
+      suffixes: ["-lük"]
+      meaning:
+        en: "greatness, size"
+        ar: "عظمة، حجم"
+exampleSentences: ["s009"]
+meta:
+  verified: true

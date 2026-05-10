@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const suffixes = await getCollection('suffixes');
+const sorted = suffixes.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+
+const typeColors: Record<string, string> = {
+  tense: 'badge-primary',
+  case: 'badge-secondary',
+  plural: 'badge-accent',
+  derivational: 'badge-success',
+  possessive: 'badge-primary',
+  negation: 'badge-primary',
+  question: 'badge-secondary',
+  person: 'badge-accent',
+  other: 'badge-primary',
+};
+---
+
+<BaseLayout title="Suffixes" description="Turkish suffix catalog — tense, case, plural, derivational suffixes with vowel harmony rules and examples">
+  <section class="mb-8 animate-fade-in">
+    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
+      🔗 <span class="gradient-text">Turkish Suffixes</span>
+    </h1>
+    <p class="text-text-secondary text-base max-w-2xl">
+      Turkish is agglutinative — words are built by stacking suffixes onto roots.
+      Master these {suffixes.length} suffixes to unlock the language.
+    </p>
+  </section>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 animate-slide-up" style="animation-delay: 0.1s">
+    {sorted.map(s => (
+      <a href={`/suffixes/${s.data.id}/`} class="glass-card p-5 no-underline group block">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <h2 class="text-2xl font-bold text-secondary group-hover:text-primary transition-colors">{s.data.suffix}</h2>
+            <p class="text-sm font-semibold text-text mt-1">{s.data.title.en}</p>
+            {s.data.title.ar && (
+              <p class="text-xs text-text-muted mt-0.5" dir="rtl">{s.data.title.ar}</p>
+            )}
+          </div>
+          <div class="flex flex-col items-end gap-1">
+            <span class={`badge cefr-${s.data.cefr}`}>{s.data.cefr}</span>
+            <span class={`badge ${typeColors[s.data.type] || 'badge-primary'}`}>{s.data.type}</span>
+          </div>
+        </div>
+        {s.data.variants.length > 0 && (
+          <div class="flex flex-wrap gap-1 mt-2 pt-3 border-t border-border-light">
+            <span class="text-[10px] font-bold text-text-muted uppercase tracking-wider self-center mr-1">Variants:</span>
+            {s.data.variants.map(v => (
+              <span class="px-2 py-0.5 text-xs font-mono font-bold bg-secondary/8 text-secondary rounded">{v}</span>
+            ))}
+          </div>
+        )}
+        {s.data.vowelHarmony && (
+          <div class="mt-2 text-xs text-text-muted">
+            Vowel Harmony: <strong class="text-text">{s.data.vowelHarmony}</strong>
+          </div>
+        )}
+      </a>
+    ))}
+  </div>
+</BaseLayout>

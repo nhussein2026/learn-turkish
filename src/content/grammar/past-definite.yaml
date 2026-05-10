@@ -1,0 +1,45 @@
+id: past-definite
+title:
+  en: "Past Tense — Definite (-di)"
+  ar: "الماضي المحدد (-di)"
+cefr: A1
+explanation:
+  en: |
+    The definite past tense is used for actions the speaker personally witnessed or is certain about.
+
+    **Formation:** Verb root + -di/-dı/-du/-dü (or -ti/-tı/-tu/-tü after voiceless consonants)
+
+    **Vowel harmony (4-way):**
+    - After a/ı → -dı
+    - After e/i → -di
+    - After o/u → -du
+    - After ö/ü → -dü
+
+    **Consonant rule:** After voiceless consonants (ç, f, h, k, p, s, ş, t), use t- instead of d-:
+    - yap → yap-tı (not yap-dı)
+
+    **Personal suffixes:**
+    - Ben: -m (geldim)
+    - Sen: -n (geldin)
+    - O: (none) (geldi)
+    - Biz: -k (geldik)
+    - Siz: -niz (geldiniz)
+    - Onlar: -ler (geldiler)
+  ar: |
+    يُستخدم الماضي المحدد للأفعال التي شهدها المتحدث شخصياً أو يتأكد منها.
+
+    **التشكيل:** جذر الفعل + di/dı/du/dü (أو ti/tı/tu/tü بعد الحروف الساكنة المهموسة)
+
+    **التوافق الصوتي الرباعي:**
+    - بعد a/ı ← dı
+    - بعد e/i ← di
+    - بعد o/u ← du
+    - بعد ö/ü ← dü
+
+    **قاعدة الحروف الساكنة:** بعد الحروف المهموسة (ç, f, h, k, p, s, ş, t) نستخدم t بدلاً من d.
+suffixes: ["di"]
+examples: ["s002"]
+order: 2
+tags: ["tense", "essential", "beginner"]
+meta:
+  verified: true

@@ -1,0 +1,11 @@
+id: s001
+turkish: "Ben yarın geliyorum."
+translations:
+  en: "I am coming tomorrow."
+  ar: "أنا آتٍ غداً."
+cefr: A1
+wordRefs: ["ben", "gelmek"]
+tags: ["present-continuous", "time"]
+context: casual
+meta:
+  verified: true

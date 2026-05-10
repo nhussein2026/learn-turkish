@@ -1,0 +1,14 @@
+id: var
+turkish: var
+pos: particle
+translations:
+  en: "there is, exists"
+  ar: "يوجد، موجود"
+cefr: A1
+frequencyRank: 5
+relatedWords: ["yok"]
+tags: ["essential", "core-100"]
+categories: ["existence", "daily-life"]
+exampleSentences: []
+meta:
+  verified: true

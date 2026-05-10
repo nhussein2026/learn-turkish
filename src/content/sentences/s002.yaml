@@ -1,0 +1,11 @@
+id: s002
+turkish: "Türkiye'den geldi."
+translations:
+  en: "He/She came from Turkey."
+  ar: "جاء/جاءت من تركيا."
+cefr: A1
+wordRefs: ["gelmek"]
+tags: ["past-tense", "origin"]
+context: casual
+meta:
+  verified: true

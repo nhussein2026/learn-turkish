@@ -1,0 +1,36 @@
+id: olmak
+turkish: olmak
+pos: verb
+translations:
+  en: "to be, to become, to happen"
+  ar: "يكون، يصبح"
+cefr: A1
+frequencyRank: 1
+root: "ol-"
+relatedWords: ["oluş", "olay"]
+tags: ["essential", "core-100", "auxiliary"]
+categories: ["being", "daily-life"]
+morphology:
+  root: "ol"
+  suffixExamples:
+    - form: "oluyorum"
+      suffixes: ["-uyor", "-um"]
+      meaning:
+        en: "I am becoming"
+        ar: "أنا أصبح"
+    - form: "oldu"
+      suffixes: ["-du"]
+      meaning:
+        en: "it happened, he/she became"
+        ar: "حدث، أصبح"
+    - form: "olacak"
+      suffixes: ["-acak"]
+      meaning:
+        en: "it will happen"
+        ar: "سوف يحدث"
+  conjugation:
+    type: regular
+    group: "a-type"
+exampleSentences: []
+meta:
+  verified: true

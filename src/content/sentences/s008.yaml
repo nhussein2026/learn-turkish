@@ -1,0 +1,11 @@
+id: s008
+turkish: "Bugün hava çok güzel."
+translations:
+  en: "The weather is very beautiful today."
+  ar: "الطقس جميل جداً اليوم."
+cefr: A1
+wordRefs: ["guzel"]
+tags: ["description", "weather"]
+context: casual
+meta:
+  verified: true

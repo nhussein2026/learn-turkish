@@ -1,0 +1,36 @@
+id: di
+suffix: "-di"
+variants: ["-dı", "-di", "-du", "-dü", "-tı", "-ti", "-tu", "-tü"]
+type: tense
+title:
+  en: "Past Tense (Definite)"
+  ar: "الماضي المحدد (المعلوم)"
+explanation:
+  en: "Used for actions the speaker witnessed or is certain about. The suffix follows both vowel harmony (4-way) and consonant assimilation (d→t after voiceless consonants: ç, f, h, k, p, s, ş, t)."
+  ar: "يُستخدم للأفعال التي شهدها المتحدث أو يتأكد منها. تتبع اللاحقة التوافق الصوتي الرباعي وتناغم الحروف الساكنة."
+vowelHarmony: i-type
+examples:
+  - base: "gel"
+    result: "geldi"
+    meaning:
+      en: "he/she came"
+      ar: "جاء/جاءت"
+  - base: "yap"
+    result: "yaptı"
+    meaning:
+      en: "he/she did"
+      ar: "فعل/فعلت"
+  - base: "gör"
+    result: "gördü"
+    meaning:
+      en: "he/she saw"
+      ar: "رأى/رأت"
+  - base: "oku"
+    result: "okudu"
+    meaning:
+      en: "he/she read"
+      ar: "قرأ/قرأت"
+cefr: A1
+order: 2
+meta:
+  verified: true

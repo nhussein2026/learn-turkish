@@ -1,0 +1,36 @@
+id: yor
+suffix: "-yor"
+variants: ["-ıyor", "-iyor", "-uyor", "-üyor"]
+type: tense
+title:
+  en: "Present Continuous Tense"
+  ar: "الزمن الحاضر المستمر"
+explanation:
+  en: "Used to express actions happening right now or habitual actions. The suffix -yor attaches to the verb root with vowel harmony. It is the most commonly used tense in spoken Turkish."
+  ar: "يُستخدم للتعبير عن الأفعال التي تحدث الآن أو الأفعال المعتادة. تُضاف اللاحقة -yor إلى جذر الفعل مع التوافق الصوتي. وهو أكثر الأزمنة استخداماً في التركية المحكية."
+vowelHarmony: i-type
+examples:
+  - base: "gel"
+    result: "geliyor"
+    meaning:
+      en: "he/she is coming"
+      ar: "هو/هي يأتي/تأتي"
+  - base: "yap"
+    result: "yapıyor"
+    meaning:
+      en: "he/she is doing"
+      ar: "هو/هي يفعل/تفعل"
+  - base: "gül"
+    result: "gülüyor"
+    meaning:
+      en: "he/she is laughing"
+      ar: "هو/هي يضحك/تضحك"
+  - base: "oku"
+    result: "okuyor"
+    meaning:
+      en: "he/she is reading"
+      ar: "هو/هي يقرأ/تقرأ"
+cefr: A1
+order: 1
+meta:
+  verified: true

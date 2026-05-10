@@ -1,0 +1,31 @@
+id: bilmek
+turkish: bilmek
+pos: verb
+translations:
+  en: "to know"
+  ar: "يعرف"
+cefr: A1
+frequencyRank: 15
+root: "bil-"
+relatedWords: ["bilgi", "bilim"]
+tags: ["essential", "core-100", "mental"]
+categories: ["mental-actions", "daily-life"]
+morphology:
+  root: "bil"
+  suffixExamples:
+    - form: "biliyorum"
+      suffixes: ["-iyor", "-um"]
+      meaning:
+        en: "I know"
+        ar: "أنا أعرف"
+    - form: "bilmiyorum"
+      suffixes: ["-m", "-iyor", "-um"]
+      meaning:
+        en: "I don't know"
+        ar: "لا أعرف"
+  conjugation:
+    type: regular
+    group: "i-type"
+exampleSentences: []
+meta:
+  verified: true

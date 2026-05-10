@@ -1,0 +1,28 @@
+id: anne
+turkish: anne
+pos: noun
+translations:
+  en: "mother, mom"
+  ar: "أم"
+cefr: A1
+frequencyRank: 50
+root: "anne"
+relatedWords: ["baba", "aile"]
+tags: ["essential", "core-100", "family"]
+categories: ["family"]
+morphology:
+  root: "anne"
+  suffixExamples:
+    - form: "annem"
+      suffixes: ["-m"]
+      meaning:
+        en: "my mother"
+        ar: "أمي"
+    - form: "anneler"
+      suffixes: ["-ler"]
+      meaning:
+        en: "mothers"
+        ar: "أمهات"
+exampleSentences: []
+meta:
+  verified: true

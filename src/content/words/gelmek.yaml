@@ -1,0 +1,41 @@
+id: gelmek
+turkish: gelmek
+pos: verb
+translations:
+  en: "to come"
+  ar: "يأتي"
+cefr: A1
+frequencyRank: 12
+root: "gel-"
+relatedWords: ["gitmek", "getirmek"]
+tags: ["motion", "essential", "core-100"]
+categories: ["movement", "daily-life"]
+morphology:
+  root: "gel"
+  suffixExamples:
+    - form: "geliyorum"
+      suffixes: ["-iyor", "-um"]
+      meaning:
+        en: "I am coming"
+        ar: "أنا آتٍ"
+    - form: "geldi"
+      suffixes: ["-di"]
+      meaning:
+        en: "he/she came"
+        ar: "جاء / جاءت"
+    - form: "gelecek"
+      suffixes: ["-ecek"]
+      meaning:
+        en: "he/she will come"
+        ar: "سوف يأتي"
+    - form: "gelmiş"
+      suffixes: ["-miş"]
+      meaning:
+        en: "he/she has come (reportedly)"
+        ar: "قد جاء (نقلاً)"
+  conjugation:
+    type: regular
+    group: "e-type"
+exampleSentences: ["s001", "s002"]
+meta:
+  verified: true

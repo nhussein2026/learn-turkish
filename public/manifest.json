@@ -1,0 +1,17 @@
+{
+  "name": "Learn Turkish",
+  "short_name": "Turkish",
+  "description": "Premium Turkish language learning platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#E30A17",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

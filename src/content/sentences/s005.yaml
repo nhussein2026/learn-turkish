@@ -1,0 +1,11 @@
+id: s005
+turkish: "Eve gidiyoruz."
+translations:
+  en: "We are going home."
+  ar: "نحن ذاهبون إلى البيت."
+cefr: A1
+wordRefs: ["ev", "gitmek"]
+tags: ["present-continuous", "motion", "dative"]
+context: casual
+meta:
+  verified: true

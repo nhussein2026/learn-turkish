@@ -1,0 +1,31 @@
+id: de
+suffix: "-de"
+variants: ["-da", "-de", "-ta", "-te"]
+type: case
+title:
+  en: "Locative Case"
+  ar: "حالة المكان (أين)"
+explanation:
+  en: "Indicates location — 'in', 'at', 'on'. Follows both vowel harmony (e-type: a/e) and consonant assimilation (d→t after voiceless consonants). Answers the question 'nerede?' (where?)."
+  ar: "تدل على المكان — 'في'. تتبع التوافق الصوتي وتناغم الحروف الساكنة. تجيب عن سؤال 'أين؟' (nerede?)."
+vowelHarmony: e-type
+examples:
+  - base: "ev"
+    result: "evde"
+    meaning:
+      en: "at home"
+      ar: "في البيت"
+  - base: "okul"
+    result: "okulda"
+    meaning:
+      en: "at school"
+      ar: "في المدرسة"
+  - base: "sokak"
+    result: "sokakta"
+    meaning:
+      en: "on the street"
+      ar: "في الشارع"
+cefr: A1
+order: 4
+meta:
+  verified: true

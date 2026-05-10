@@ -1,0 +1,31 @@
+id: calismak
+turkish: çalışmak
+pos: verb
+translations:
+  en: "to work, to study"
+  ar: "يعمل، يدرس"
+cefr: A1
+frequencyRank: 32
+root: "çalış-"
+relatedWords: ["calisma", "caliskan"]
+tags: ["essential", "core-100"]
+categories: ["work", "education"]
+morphology:
+  root: "çalış"
+  suffixExamples:
+    - form: "çalışıyorum"
+      suffixes: ["-ıyor", "-um"]
+      meaning:
+        en: "I am working"
+        ar: "أنا أعمل"
+    - form: "çalıştı"
+      suffixes: ["-tı"]
+      meaning:
+        en: "he/she worked"
+        ar: "عمل / عملت"
+  conjugation:
+    type: regular
+    group: "a-type"
+exampleSentences: []
+meta:
+  verified: true

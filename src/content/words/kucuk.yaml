@@ -1,0 +1,28 @@
+id: kucuk
+turkish: küçük
+pos: adjective
+translations:
+  en: "small, little"
+  ar: "صغير"
+cefr: A1
+frequencyRank: 22
+root: "küçük"
+relatedWords: ["buyuk"]
+tags: ["essential", "core-100", "descriptive"]
+categories: ["descriptions", "size"]
+morphology:
+  root: "küçük"
+  suffixExamples:
+    - form: "küçükler"
+      suffixes: ["-ler"]
+      meaning:
+        en: "small ones, children"
+        ar: "الصغار"
+    - form: "küçüklük"
+      suffixes: ["-lük"]
+      meaning:
+        en: "smallness, childhood"
+        ar: "طفولة"
+exampleSentences: []
+meta:
+  verified: true

@@ -1,0 +1,43 @@
+id: ev
+turkish: ev
+pos: noun
+translations:
+  en: "house, home"
+  ar: "بيت، منزل"
+cefr: A1
+frequencyRank: 25
+root: "ev"
+relatedWords: ["evde", "oda"]
+tags: ["essential", "core-100"]
+categories: ["home", "daily-life"]
+morphology:
+  root: "ev"
+  suffixExamples:
+    - form: "evde"
+      suffixes: ["-de"]
+      meaning:
+        en: "at home"
+        ar: "في البيت"
+    - form: "eve"
+      suffixes: ["-e"]
+      meaning:
+        en: "to home"
+        ar: "إلى البيت"
+    - form: "evden"
+      suffixes: ["-den"]
+      meaning:
+        en: "from home"
+        ar: "من البيت"
+    - form: "evler"
+      suffixes: ["-ler"]
+      meaning:
+        en: "houses"
+        ar: "بيوت"
+    - form: "evim"
+      suffixes: ["-im"]
+      meaning:
+        en: "my house"
+        ar: "بيتي"
+exampleSentences: ["s004", "s005"]
+meta:
+  verified: true

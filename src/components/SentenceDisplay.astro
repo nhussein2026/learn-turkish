@@ -1,0 +1,36 @@
+---
+import type { Sentence } from '../schemas/sentence';
+
+interface Props {
+  sentence: any; // Can be Sentence or { data: Sentence }
+  className?: string;
+}
+
+const { sentence: sentenceProp, className = "" } = Astro.props;
+const sentence = sentenceProp.data || sentenceProp;
+---
+
+<div class={`p-4 rounded-xl bg-surface-alt border border-border-light hover:border-primary/20 transition-all ${className}`}>
+  <p class="text-base font-semibold text-text mb-2">{sentence.turkish}</p>
+  
+  <div class="space-y-1">
+    {sentence.translations.en && (
+      <p class="text-sm text-text-secondary flex items-center gap-2">
+        <span class="opacity-60">🇬🇧</span> {sentence.translations.en}
+      </p>
+    )}
+    {sentence.translations.ar && (
+      <p class="text-sm text-text-secondary flex items-center gap-2 justify-end" dir="rtl">
+        {sentence.translations.ar} <span class="opacity-60">🇸🇦</span>
+      </p>
+    )}
+  </div>
+
+  <div class="flex flex-wrap gap-2 mt-3 pt-3 border-t border-border-light/50">
+    <span class={`badge cefr-${sentence.cefr}`}>{sentence.cefr}</span>
+    {sentence.context && <span class="badge badge-accent">{sentence.context}</span>}
+    {sentence.tags.map(tag => (
+      <span class="badge badge-primary">{tag}</span>
+    ))}
+  </div>
+</div>
