@@ -1,0 +1,11 @@
+id: s009
+turkish: "Bu ev çok büyük."
+translations:
+  en: "This house is very big."
+  ar: "هذا البيت كبير جداً."
+cefr: A1
+wordRefs: ["ev", "buyuk"]
+tags: ["description", "size"]
+context: casual
+meta:
+  verified: true

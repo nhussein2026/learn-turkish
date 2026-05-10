@@ -1,0 +1,31 @@
+id: sevmek
+turkish: sevmek
+pos: verb
+translations:
+  en: "to love, to like"
+  ar: "يحب"
+cefr: A1
+frequencyRank: 40
+root: "sev-"
+relatedWords: ["sevgi", "sevgili"]
+tags: ["essential", "core-100", "emotions"]
+categories: ["emotions", "daily-life"]
+morphology:
+  root: "sev"
+  suffixExamples:
+    - form: "seviyorum"
+      suffixes: ["-iyor", "-um"]
+      meaning:
+        en: "I love"
+        ar: "أنا أحب"
+    - form: "sevdi"
+      suffixes: ["-di"]
+      meaning:
+        en: "he/she loved"
+        ar: "أحب / أحبت"
+  conjugation:
+    type: regular
+    group: "e-type"
+exampleSentences: []
+meta:
+  verified: true

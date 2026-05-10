@@ -1,0 +1,31 @@
+id: demek
+turkish: demek
+pos: verb
+translations:
+  en: "to say, to tell"
+  ar: "يقول"
+cefr: A1
+frequencyRank: 7
+root: "de-"
+relatedWords: ["solemek"]
+tags: ["essential", "core-100"]
+categories: ["communication"]
+morphology:
+  root: "de"
+  suffixExamples:
+    - form: "diyorum"
+      suffixes: ["-iyor", "-um"]
+      meaning:
+        en: "I am saying"
+        ar: "أنا أقول"
+    - form: "dedi"
+      suffixes: ["-di"]
+      meaning:
+        en: "he/she said"
+        ar: "قال / قالت"
+  conjugation:
+    type: irregular
+    group: "vowel change"
+exampleSentences: []
+meta:
+  verified: true

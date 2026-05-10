@@ -1,0 +1,28 @@
+id: iyi
+turkish: iyi
+pos: adjective
+translations:
+  en: "good, well, fine"
+  ar: "جيد، حسن"
+cefr: A1
+frequencyRank: 10
+root: "iyi"
+relatedWords: ["iyilik", "kotu"]
+tags: ["essential", "core-100", "descriptive"]
+categories: ["descriptions", "daily-life"]
+morphology:
+  root: "iyi"
+  suffixExamples:
+    - form: "iyilik"
+      suffixes: ["-lik"]
+      meaning:
+        en: "goodness, kindness"
+        ar: "خير، لطف"
+    - form: "iyice"
+      suffixes: ["-ce"]
+      meaning:
+        en: "thoroughly, properly"
+        ar: "تماماً"
+exampleSentences: []
+meta:
+  verified: true

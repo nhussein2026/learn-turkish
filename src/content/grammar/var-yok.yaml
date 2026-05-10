@@ -1,0 +1,35 @@
+id: var-yok
+title:
+  en: "Existence: Var & Yok"
+  ar: "الوجود: Var و Yok"
+cefr: A1
+explanation:
+  en: |
+    Turkish uses **var** (there is/exists) and **yok** (there isn't/doesn't exist) instead of the verb "to have" in many cases.
+
+    **Possession pattern:** Noun + possessive suffix + var/yok
+    - Arabam var. = I have a car. (lit: "My car exists")
+    - Param yok. = I don't have money. (lit: "My money doesn't exist")
+
+    **Existence pattern:** Location + noun + var/yok
+    - Evde su var. = There is water at home.
+    - Okulda kimse yok. = There is nobody at school.
+
+    **Question:** Add mı/mi:
+    - Suyun var mı? = Do you have water?
+  ar: |
+    تستخدم التركية **var** (يوجد) و **yok** (لا يوجد) بدلاً من فعل "يملك" في كثير من الحالات.
+
+    **نمط الملكية:** اسم + لاحقة الملكية + var/yok
+    - Arabam var. = لدي سيارة (حرفياً: "سيارتي موجودة")
+    - Param yok. = ليس لدي مال (حرفياً: "مالي غير موجود")
+
+    **نمط الوجود:** مكان + اسم + var/yok
+    - Evde su var. = يوجد ماء في البيت
+    - Okulda kimse yok. = لا يوجد أحد في المدرسة
+suffixes: []
+examples: ["s004"]
+order: 3
+tags: ["existence", "essential", "beginner"]
+meta:
+  verified: true

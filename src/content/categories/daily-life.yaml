@@ -1,0 +1,13 @@
+id: daily-life
+title:
+  en: "Daily Life"
+  ar: "الحياة اليومية"
+description:
+  en: "Essential words for everyday situations"
+  ar: "كلمات أساسية للمواقف اليومية"
+icon: "🏠"
+color: "#E30A17"
+wordRefs: ["gelmek", "gitmek", "ev", "yapmak", "su", "yemek"]
+order: 1
+meta:
+  verified: true

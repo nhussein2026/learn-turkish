@@ -1,0 +1,11 @@
+id: s006
+turkish: "Ne yapıyorsun?"
+translations:
+  en: "What are you doing?"
+  ar: "ماذا تفعل؟"
+cefr: A1
+wordRefs: ["yapmak"]
+tags: ["present-continuous", "question"]
+context: casual
+meta:
+  verified: true

@@ -1,0 +1,89 @@
+nav:
+  home: "الرئيسية"
+  words: "المفردات"
+  grammar: "القواعد"
+  suffixes: "اللواحق"
+  practice: "التمارين"
+  search: "بحث"
+  dashboard: "لوحة التحكم"
+
+common:
+  level: "المستوى"
+  frequency: "ترتيب التكرار"
+  root: "الجذر"
+  examples: "أمثلة"
+  relatedWords: "كلمات ذات صلة"
+  tags: "وسوم"
+  categories: "تصنيفات"
+  morphology: "الصرف"
+  conjugation: "التصريف"
+  suffixExamples: "أشكال اللواحق"
+  translations: "الترجمات"
+  viewAll: "عرض الكل"
+  comingSoon: "قريباً"
+  search: "بحث"
+  searchPlaceholder: "ابحث عن كلمات بالتركية أو الإنجليزية أو العربية..."
+  noResults: "لم يتم العثور على نتائج"
+  loading: "جاري التحميل..."
+  back: "رجوع"
+  next: "التالي"
+  previous: "السابق"
+  of: "من"
+  verified: "موثّق"
+
+pos:
+  noun: "اسم"
+  verb: "فعل"
+  adjective: "صفة"
+  adverb: "ظرف"
+  pronoun: "ضمير"
+  postposition: "حرف جر (بعدي)"
+  conjunction: "حرف عطف"
+  interjection: "اسم فعل"
+  determiner: "أداة تعريف"
+  particle: "أداة"
+  numeral: "عدد"
+
+cefr:
+  A1: "مبتدئ"
+  A2: "أساسي"
+  B1: "متوسط"
+  B2: "فوق المتوسط"
+  C1: "متقدم"
+  C2: "إتقان"
+
+home:
+  title: "تعلّم التركية"
+  subtitle: "أتقن التركية من خلال التعلم المنظم والمبني على البيانات"
+  heroDescription: "منصة شاملة لتعلم التركية من الإنجليزية أو العربية. استكشف المفردات والقواعد واللواحق وتمرّن مع جمل حقيقية."
+  startLearning: "ابدأ التعلم"
+  exploreVocab: "استكشف المفردات"
+  statsWords: "كلمة"
+  statsSentences: "جملة"
+  statsGrammar: "قاعدة نحوية"
+  statsSuffixes: "لاحقة"
+
+words:
+  title: "المفردات"
+  subtitle: "تصفح وابحث في قاعدة بيانات الكلمات التركية"
+  filterByLevel: "تصفية حسب المستوى"
+  filterByPOS: "تصفية حسب نوع الكلمة"
+  allLevels: "جميع المستويات"
+  allPOS: "جميع الأنواع"
+  wordCount: "كلمات"
+
+grammar:
+  title: "القواعد"
+  subtitle: "قواعد اللغة التركية بشرح واضح"
+
+suffixes:
+  title: "اللواحق"
+  subtitle: "اللبنات الأساسية للتركية — أتقن نظام اللواحق"
+  variants: "المتغيرات"
+  vowelHarmony: "التوافق الصوتي"
+  type: "النوع"
+
+footer:
+  developedBy: "تم التطوير بواسطة"
+  rights: "جميع الحقوق محفوظة"
+  openSource: "مفتوح المصدر على GitHub"

@@ -1,0 +1,14 @@
+id: yok
+turkish: yok
+pos: particle
+translations:
+  en: "there is not, does not exist"
+  ar: "لا يوجد، غير موجود"
+cefr: A1
+frequencyRank: 6
+relatedWords: ["var"]
+tags: ["essential", "core-100"]
+categories: ["existence", "daily-life"]
+exampleSentences: []
+meta:
+  verified: true

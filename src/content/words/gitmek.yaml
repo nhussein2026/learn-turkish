@@ -1,0 +1,36 @@
+id: gitmek
+turkish: gitmek
+pos: verb
+translations:
+  en: "to go"
+  ar: "يذهب"
+cefr: A1
+frequencyRank: 8
+root: "git-"
+relatedWords: ["gelmek", "getirmek", "götürmek"]
+tags: ["motion", "essential", "core-100"]
+categories: ["movement", "daily-life"]
+morphology:
+  root: "git"
+  suffixExamples:
+    - form: "gidiyorum"
+      suffixes: ["-iyor", "-um"]
+      meaning:
+        en: "I am going"
+        ar: "أنا ذاهب"
+    - form: "gitti"
+      suffixes: ["-ti"]
+      meaning:
+        en: "he/she went"
+        ar: "ذهب / ذهبت"
+    - form: "gidecek"
+      suffixes: ["-ecek"]
+      meaning:
+        en: "he/she will go"
+        ar: "سوف يذهب"
+  conjugation:
+    type: irregular
+    group: "consonant softening (t→d)"
+exampleSentences: ["s003"]
+meta:
+  verified: true

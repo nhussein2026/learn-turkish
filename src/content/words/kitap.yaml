@@ -1,0 +1,33 @@
+id: kitap
+turkish: kitap
+pos: noun
+translations:
+  en: "book"
+  ar: "كتاب"
+cefr: A1
+frequencyRank: 55
+root: "kitap"
+relatedWords: ["kitapci", "kitaplik"]
+tags: ["essential", "core-100"]
+categories: ["education", "objects"]
+morphology:
+  root: "kitap"
+  suffixExamples:
+    - form: "kitabı"
+      suffixes: ["-ı"]
+      meaning:
+        en: "the book (accusative)"
+        ar: "الكتابَ"
+    - form: "kitaplar"
+      suffixes: ["-lar"]
+      meaning:
+        en: "books"
+        ar: "كتب"
+    - form: "kitabım"
+      suffixes: ["-ım"]
+      meaning:
+        en: "my book"
+        ar: "كتابي"
+exampleSentences: []
+meta:
+  verified: true

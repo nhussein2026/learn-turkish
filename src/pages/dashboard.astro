@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allWords = await getCollection('words');
+const totalWordsCount = allWords.length;
+---
+
+<BaseLayout title="Dashboard" description="Track your Turkish learning progress and mastered vocabulary.">
+  <section class="mb-8 animate-fade-in">
+    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
+      📊 <span class="gradient-text">Your Dashboard</span>
+    </h1>
+    <p class="text-text-secondary text-base">
+      Track your progress and review mastered words.
+    </p>
+  </section>
+
+  <!-- Stats Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12" id="stats-container">
+    <div class="glass-card p-6 flex flex-col items-center text-center">
+      <div class="text-sm font-bold text-text-muted uppercase tracking-wider mb-2">Mastered Words</div>
+      <div class="text-5xl font-extrabold text-primary mb-1" id="mastered-count">0</div>
+      <div class="text-xs text-text-muted">out of {totalWordsCount} available</div>
+      <div class="w-full bg-surface-alt h-2 rounded-full mt-4 overflow-hidden border border-border-light">
+        <div id="progress-bar" class="bg-primary h-full transition-all duration-1000" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <div class="glass-card p-6 flex flex-col items-center text-center">
+      <div class="text-sm font-bold text-text-muted uppercase tracking-wider mb-2">Quiz Accuracy</div>
+      <div class="text-5xl font-extrabold text-secondary mb-1" id="avg-accuracy">0%</div>
+      <div class="text-xs text-text-muted" id="quiz-count">0 quizzes completed</div>
+    </div>
+
+    <div class="glass-card p-6 flex flex-col items-center text-center">
+      <div class="text-sm font-bold text-text-muted uppercase tracking-wider mb-2">Current Streak</div>
+      <div class="text-5xl font-extrabold text-accent-dark mb-1" id="streak-days">0</div>
+      <div class="text-xs text-text-muted uppercase tracking-widest">Days</div>
+    </div>
+  </div>
+
+  <!-- Mastered Words List -->
+  <section class="animate-slide-up" style="animation-delay: 0.2s">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold">Recently Mastered</h2>
+      <button id="clear-progress" class="text-xs font-bold text-error hover:underline bg-transparent border-none cursor-pointer">
+        Reset All Progress
+      </button>
+    </div>
+    
+    <div id="mastered-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Populated by JS -->
+      <div class="col-span-full py-20 text-center glass-card bg-surface-alt/50 border-dashed">
+        <p class="text-text-muted">You haven't mastered any words yet. Start exploring vocabulary!</p>
+        <a href="/words/" class="btn btn-primary mt-4">Browse Words</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Embedded word data for the list -->
+  <script define:vars={{ allWords: allWords.map(w => ({ id: w.data.id, turkish: w.data.turkish, en: w.data.translations.en, cefr: w.data.cefr })) }}>
+    window.__ALL_WORDS__ = allWords;
+  </script>
+
+  <script>
+    import { getProgress, saveProgress } from '../lib/stores/progress';
+
+    function updateDashboard() {
+      const progress = getProgress();
+      const allWords = (window as any).__ALL_WORDS__;
+      
+      // Update Stats
+      const masteredCount = progress.masteredWords.length;
+      const totalWords = allWords.length;
+      const percentage = Math.round((masteredCount / totalWords) * 100);
+      
+      const masteredCountEl = document.getElementById('mastered-count')!;
+      const progressBarEl = document.getElementById('progress-bar')!;
+      const avgAccuracyEl = document.getElementById('avg-accuracy')!;
+      const quizCountEl = document.getElementById('quiz-count')!;
+      const streakDaysEl = document.getElementById('streak-days')!;
+
+      masteredCountEl.textContent = masteredCount.toString();
+      progressBarEl.style.width = `${percentage}%`;
+      
+      // Accuracy
+      if (progress.quizScores.length > 0) {
+        const totalAccuracy = progress.quizScores.reduce((acc, q) => acc + (q.score / q.total), 0);
+        const avg = Math.round((totalAccuracy / progress.quizScores.length) * 100);
+        avgAccuracyEl.textContent = `${avg}%`;
+        quizCountEl.textContent = `${progress.quizScores.length} quizzes completed`;
+      }
+
+      streakDaysEl.textContent = progress.streak.toString();
+
+      // Update Mastered List
+      const masteredListEl = document.getElementById('mastered-list')!;
+      if (masteredCount > 0) {
+        const masteredWordData = allWords.filter((w: any) => progress.masteredWords.includes(w.id));
+        // Sort by most recently added (assuming the array order)
+        const recent = masteredWordData.reverse().slice(0, 9);
+        
+        masteredListEl.innerHTML = recent.map((w: any) => `
+          <a href="/words/${w.id}/" class="glass-card p-4 no-underline group block border-success/20">
+            <div class="flex items-start justify-between mb-1">
+              <h3 class="text-base font-bold text-text group-hover:text-success transition-colors">${w.turkish}</h3>
+              <span class="badge cefr-${w.cefr}">${w.cefr}</span>
+            </div>
+            <p class="text-sm text-text-secondary">${w.en}</p>
+          </a>
+        `).join('');
+      }
+    }
+
+    // Initial load
+    updateDashboard();
+
+    // Listen for updates
+    window.addEventListener('progress-update', updateDashboard);
+
+    // Reset progress
+    document.getElementById('clear-progress')?.addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset all your progress? This cannot be undone.')) {
+        localStorage.removeItem('learn_turkish_progress');
+        window.location.reload();
+      }
+    });
+  </script>
+</BaseLayout>

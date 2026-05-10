@@ -1,0 +1,62 @@
+---
+import type { Translation } from '../schemas/shared';
+
+interface Props {
+  root: string;
+  forms: {
+    form: string;
+    suffixes: string[];
+    meaning: Translation;
+  }[];
+}
+
+const { root, forms } = Astro.props;
+---
+
+<div class="space-y-6">
+  {forms.map((item, index) => (
+    <div class="relative group" style={`animation-delay: ${0.1 * index}s`}>
+      <!-- Background Line -->
+      <div class="absolute left-6 top-8 bottom-0 w-0.5 bg-gradient-to-b from-primary/30 to-transparent"></div>
+      
+      <div class="flex items-start gap-4">
+        <!-- Dot/Icon -->
+        <div class="w-12 h-12 rounded-full bg-white border-2 border-primary/20 flex items-center justify-center font-bold text-primary shadow-sm group-hover:scale-110 transition-transform z-10">
+          {index + 1}
+        </div>
+        
+        <div class="flex-1 glass-card p-5 group-hover:border-primary/30 transition-colors">
+          <div class="flex flex-wrap items-end gap-1 mb-3">
+            <!-- Root -->
+            <span class="text-xl font-bold text-text bg-surface-alt px-1 rounded">{root}</span>
+            
+            <!-- Suffixes -->
+            {item.suffixes.map((suffix, i) => (
+              <span 
+                class="text-xl font-bold text-primary animate-fade-in" 
+                style={`animation-delay: ${0.2 + (i * 0.1)}s`}
+              >
+                {suffix}
+              </span>
+            ))}
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-x-6 gap-y-1 text-sm text-text-secondary border-t border-border-light pt-3">
+            {item.meaning.en && (
+              <span class="flex items-center gap-2">
+                <span class="text-xs font-bold text-text-muted uppercase">EN:</span>
+                {item.meaning.en}
+              </span>
+            )}
+            {item.meaning.ar && (
+              <span class="flex items-center gap-2" dir="rtl">
+                <span class="text-xs font-bold text-text-muted uppercase ml-2">AR:</span>
+                {item.meaning.ar}
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>

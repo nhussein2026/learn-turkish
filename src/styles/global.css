@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+/* ============================================================
+   LEARN TURKISH — Design System
+   Turkish-inspired color palette + premium typography
+   ============================================================ */
+
+@theme {
+  /* Turkish-Inspired Color Palette */
+  --color-primary: #E30A17;
+  --color-primary-dark: #B80812;
+  --color-primary-light: #FF2D3B;
+  --color-secondary: #00B5E2;
+  --color-secondary-dark: #0091B5;
+  --color-accent: #C5A059;
+  --color-accent-dark: #A88542;
+
+  /* Neutrals */
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F8FAFB;
+  --color-surface-hover: #F0F4F7;
+  --color-bg: #F4F7F9;
+  --color-bg-dark: #0F1113;
+  --color-text: #1A1C1E;
+  --color-text-secondary: #44474E;
+  --color-text-muted: #74777F;
+  --color-border: #DDE2E6;
+  --color-border-light: #EEF1F3;
+
+  /* Semantic */
+  --color-success: #1B9C85;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Typography */
+  --font-heading: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-arabic: 'Noto Sans Arabic', 'Inter', system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(227, 10, 23, 0.15);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+
+@layer base {
+  @font-face {
+    font-family: 'Inter';
+    font-display: swap;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  /* RTL Support */
+  [dir='rtl'] {
+    font-family: var(--font-arabic);
+  }
+
+  [dir='rtl'] h1,
+  [dir='rtl'] h2,
+  [dir='rtl'] h3,
+  [dir='rtl'] h4,
+  [dir='rtl'] h5,
+  [dir='rtl'] h6 {
+    font-family: var(--font-arabic);
+  }
+}
+
+/* ============================================================
+   Component Classes
+   ============================================================ */
+
+@layer components {
+  /* Glass card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  /* Turkish-themed background pattern */
+  .bg-pattern {
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(227, 10, 23, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(0, 181, 226, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(197, 160, 89, 0.03) 0%, transparent 50%);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+  }
+
+  .badge-primary {
+    background-color: rgba(227, 10, 23, 0.08);
+    color: var(--color-primary);
+  }
+
+  .badge-secondary {
+    background-color: rgba(0, 181, 226, 0.08);
+    color: var(--color-secondary);
+  }
+
+  .badge-accent {
+    background-color: rgba(197, 160, 89, 0.1);
+    color: var(--color-accent-dark);
+  }
+
+  .badge-success {
+    background-color: rgba(27, 156, 133, 0.08);
+    color: var(--color-success);
+  }
+
+  /* Button */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(227, 10, 23, 0.25);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(227, 10, 23, 0.35);
+  }
+
+  .btn-secondary {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-text-muted);
+  }
+
+  /* CEFR Level Colors */
+  .cefr-A1 { background-color: #DCFCE7; color: #166534; }
+  .cefr-A2 { background-color: #D1FAE5; color: #065F46; }
+  .cefr-B1 { background-color: #DBEAFE; color: #1E40AF; }
+  .cefr-B2 { background-color: #E0E7FF; color: #3730A3; }
+  .cefr-C1 { background-color: #F3E8FF; color: #6B21A8; }
+  .cefr-C2 { background-color: #FCE7F3; color: #9D174D; }
+
+  /* POS tag colors */
+  .pos-verb { background-color: #DBEAFE; color: #1D4ED8; }
+  .pos-noun { background-color: #FEF3C7; color: #92400E; }
+  .pos-adjective { background-color: #E0E7FF; color: #4338CA; }
+  .pos-adverb { background-color: #FCE7F3; color: #BE185D; }
+  .pos-pronoun { background-color: #D1FAE5; color: #047857; }
+  /* Sentence Builder Chips */
+  .chip-container {
+    @apply flex flex-wrap gap-2 min-h-[4rem] p-4 rounded-2xl bg-surface-alt border-2 border-dashed border-border-light transition-all;
+  }
+
+  .chip {
+    @apply px-4 py-2 rounded-xl bg-white border border-border-light shadow-sm text-sm font-bold cursor-pointer select-none transition-all hover:border-primary hover:text-primary active:scale-95;
+  }
+
+  .chip-active {
+    @apply bg-primary text-white border-primary shadow-glow;
+  }
+
+  .chip-error {
+    @apply bg-error/10 border-error text-error;
+  }
+
+  .chip-success {
+    @apply bg-success text-white border-success;
+  }
+}
+
+/* ============================================================
+   Animations
+   ============================================================ */
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}

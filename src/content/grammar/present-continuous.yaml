@@ -1,0 +1,46 @@
+id: present-continuous
+title:
+  en: "Present Continuous Tense (-yor)"
+  ar: "الزمن الحاضر المستمر (-yor)"
+cefr: A1
+explanation:
+  en: |
+    The present continuous tense is formed by adding -yor to the verb root.
+
+    **Formation:** Verb root + vowel harmony vowel + yor + personal suffix
+
+    **Steps:**
+    1. Take the verb root: gel- (from gelmek)
+    2. Add the harmony vowel: gel-i-
+    3. Add -yor: gel-i-yor
+    4. Add personal suffix: gel-i-yor-um (I am coming)
+
+    **Personal suffixes:**
+    - Ben: -um / -üm
+    - Sen: -sun / -sün
+    - O: (none)
+    - Biz: -uz / -üz
+    - Siz: -sunuz / -sünüz
+    - Onlar: -lar / -ler
+
+    **Negative:** Add -m before -yor: gel-m-iyor (not coming)
+    **Question:** Add mı/mi after the verb: geliyor mu? (is he coming?)
+  ar: |
+    يُشكّل الزمن الحاضر المستمر بإضافة -yor إلى جذر الفعل.
+
+    **التشكيل:** جذر الفعل + حرف التوافق الصوتي + yor + لاحقة الشخص
+
+    **الخطوات:**
+    1. خذ جذر الفعل: gel- (من gelmek)
+    2. أضف حرف التوافق: gel-i-
+    3. أضف -yor: gel-i-yor
+    4. أضف لاحقة الشخص: gel-i-yor-um (أنا آتٍ)
+
+    **النفي:** أضف -m قبل -yor: gel-m-iyor (لا يأتي)
+    **السؤال:** أضف mı/mi بعد الفعل: geliyor mu? (هل يأتي؟)
+suffixes: ["yor"]
+examples: ["s001", "s003", "s005", "s006"]
+order: 1
+tags: ["tense", "essential", "beginner"]
+meta:
+  verified: true

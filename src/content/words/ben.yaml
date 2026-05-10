@@ -1,0 +1,37 @@
+id: ben
+turkish: ben
+pos: pronoun
+translations:
+  en: "I, me"
+  ar: "أنا"
+cefr: A1
+frequencyRank: 2
+relatedWords: ["sen", "biz"]
+tags: ["essential", "core-100", "pronoun"]
+categories: ["pronouns"]
+morphology:
+  root: "ben"
+  suffixExamples:
+    - form: "benim"
+      suffixes: ["-im"]
+      meaning:
+        en: "my, mine"
+        ar: "لي، ملكي"
+    - form: "bana"
+      suffixes: ["-a"]
+      meaning:
+        en: "to me"
+        ar: "لي، إليّ"
+    - form: "beni"
+      suffixes: ["-i"]
+      meaning:
+        en: "me (accusative)"
+        ar: "إيّاي"
+    - form: "bende"
+      suffixes: ["-de"]
+      meaning:
+        en: "at me / on me"
+        ar: "عندي"
+exampleSentences: []
+meta:
+  verified: true

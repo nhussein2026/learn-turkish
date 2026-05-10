@@ -1,116 +1,152 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SkillCard from '../components/SkillCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WordCard from '../components/WordCard.astro';
+import { getCollection } from 'astro:content';
 
-const skills = [
-  { title: 'Reading', titleTr: 'Okuma', icon: '📖', color: '#E30A17', progress: 45 },
-  { title: 'Writing', titleTr: 'Yazma', icon: '✍️', color: '#00B5E2', progress: 30 },
-  { title: 'Listening', titleTr: 'Dinleme', icon: '🎧', color: '#C5A059', progress: 20 },
-  { title: 'Speaking', titleTr: 'Konuşma', icon: '🗣️', color: '#1B9C85', progress: 15 },
-  { title: 'Grammar', titleTr: 'Dil Bilgisi', icon: '📐', color: '#6C4AB6', progress: 60 },
-  { title: 'Vocabulary', titleTr: 'Kelime Bilgisi', icon: '📚', color: '#FF7B54', progress: 50 },
+const words = await getCollection('words');
+const sentences = await getCollection('sentences');
+const grammarRules = await getCollection('grammar');
+const suffixList = await getCollection('suffixes');
+
+const stats = [
+  { label: 'Words', value: words.length, icon: '📚', color: 'primary' },
+  { label: 'Sentences', value: sentences.length, icon: '💬', color: 'secondary' },
+  { label: 'Grammar Rules', value: grammarRules.length, icon: '📐', color: 'accent' },
+  { label: 'Suffixes', value: suffixList.length, icon: '🔗', color: 'success' },
 ];
+
+const recentWords = words
+  .sort((a, b) => (a.data.frequencyRank ?? 999) - (b.data.frequencyRank ?? 999))
+  .slice(0, 6);
+
+const cefrGroups = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+const wordsByLevel = cefrGroups.map(level => ({
+  level,
+  count: words.filter(w => w.data.cefr === level).length,
+}));
 ---
 
-<Layout title="Dashboard">
-	<div class="mb-12">
-    <div class="flex items-center gap-2 mb-2">
-      <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded uppercase tracking-widest">Level A1</span>
-      <span class="text-text-muted text-xs font-semibold">Starter Phase</span>
+<BaseLayout title="Home" description="Learn Turkish — A data-driven Turkish language learning platform for English and Arabic speakers">
+  <!-- Hero Section -->
+  <section class="py-12 md:py-20 animate-fade-in">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="badge badge-primary">Open Source</span>
+        <span class="badge badge-accent">Multilingual</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-[1.1]">
+        Master <span class="gradient-text">Turkish</span> Through Structured Learning
+      </h1>
+      <p class="text-lg text-text-secondary leading-relaxed mb-8 max-w-2xl">
+        A comprehensive, data-driven platform for learning Turkish from
+        <strong>English</strong> or <strong>Arabic</strong>. Explore vocabulary with morphology,
+        grammar rules, suffix trees, and real-world sentences.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/words/" class="btn btn-primary">
+          📚 Explore Vocabulary
+        </a>
+        <a href="/grammar/" class="btn btn-secondary">
+          📐 Learn Grammar
+        </a>
+      </div>
     </div>
-		<h2 class="text-4xl font-extrabold mb-2">Merhaba, Naser. <span class="text-primary">Hoş Geldiniz!</span></h2>
-		<p class="text-text-secondary text-lg max-w-2xl">
-      Continue your Turkish journey from <span class="font-bold">English</span> or <span class="font-bold">Arabic</span>. 
-      Work on all skills in parallel to achieve mastery.
-    </p>
-	</div>
+  </section>
 
-	<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-    {skills.map(skill => (
-      <SkillCard {...skill} />
+  <!-- Stats Grid -->
+  <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 animate-slide-up" style="animation-delay: 0.1s">
+    {stats.map(stat => (
+      <div class="glass-card p-5 text-center">
+        <div class="text-2xl mb-2">{stat.icon}</div>
+        <div class="text-3xl font-extrabold text-text mb-1">{stat.value}</div>
+        <div class="text-xs font-semibold text-text-muted uppercase tracking-wider">{stat.label}</div>
+      </div>
     ))}
-	</section>
+  </section>
 
-	<div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-    <!-- Resources Section -->
-    <section>
-      <div class="flex items-center justify-between mb-6">
-        <h3 class="text-2xl font-bold">Latest Resources</h3>
-        <a href="/resources" class="text-primary font-bold text-sm hover:underline">View All</a>
+  <!-- Most Common Words -->
+  <section class="mb-16 animate-slide-up" style="animation-delay: 0.2s">
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <h2 class="text-2xl font-bold">Most Common Words</h2>
+        <p class="text-sm text-text-muted mt-1">Start with the highest frequency words</p>
       </div>
-      <div class="space-y-4">
-        <div class="glass p-4 rounded-lg flex items-center justify-between hover:bg-white/50 transition-colors cursor-pointer">
-          <div class="flex items-center gap-4">
-            <div class="text-2xl">📄</div>
-            <div>
-              <h4 class="font-bold text-sm">Turkish Grammar Essentials</h4>
-              <p class="text-xs text-text-muted">PDF Resource • 1.2MB</p>
-            </div>
+      <a href="/words/" class="text-sm font-bold text-primary hover:underline no-underline">View All →</a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {recentWords.map(word => (
+        <WordCard word={word.data} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Start Practicing Section -->
+  <section class="mb-16 animate-slide-up" style="animation-delay: 0.25s">
+    <div class="glass-card p-8 bg-gradient-to-br from-primary to-primary-dark text-white border-none shadow-glow">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1">
+          <div class="inline-block px-3 py-1 rounded-full bg-white/20 text-xs font-bold uppercase tracking-widest mb-4">New Feature</div>
+          <h2 class="text-3xl font-extrabold mb-4">Test Your Knowledge</h2>
+          <p class="text-white/80 text-lg mb-8 leading-relaxed">
+            Ready to master Turkish? Try our interactive flashcards and quizzes. 
+            Track your progress and climb the ranks!
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/practice/flashcards/" class="btn bg-white text-primary hover:bg-white/90">📇 Start Flashcards</a>
+            <a href="/practice/quiz/" class="btn border-2 border-white/30 text-white hover:bg-white/10">✅ Take a Quiz</a>
           </div>
-          <span class="text-xs font-bold text-primary px-2 py-1 bg-primary/5 rounded">Download</span>
         </div>
-        <div class="glass p-4 rounded-lg flex items-center justify-between hover:bg-white/50 transition-colors cursor-pointer opacity-70">
-          <div class="flex items-center gap-4">
-            <div class="text-2xl">📄</div>
-            <div>
-              <h4 class="font-bold text-sm">Most Common 1000 Words</h4>
-              <p class="text-xs text-text-muted">PDF Resource • Missing</p>
-            </div>
-          </div>
-          <span class="text-xs font-bold text-text-muted px-2 py-1 bg-border/20 rounded">Pending Restore</span>
-        </div>
+        <div class="text-8xl opacity-30 select-none animate-pulse">🎯</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Interactive Features Placeholder -->
-    <section>
-      <div class="flex items-center justify-between mb-6">
-        <h3 class="text-2xl font-bold">Practice Center</h3>
-        <span class="text-text-muted text-xs font-bold uppercase tracking-widest">Coming Soon</span>
+  <!-- CEFR Progress -->
+  <section class="mb-16 animate-slide-up" style="animation-delay: 0.3s">
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <h2 class="text-2xl font-bold">Words by Level</h2>
+        <p class="text-sm text-text-muted mt-1">CEFR proficiency distribution</p>
       </div>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="glass p-6 rounded-lg text-center opacity-75 border-dashed border-2">
-          <div class="text-3xl mb-3">🃏</div>
-          <h4 class="font-bold text-sm">Flashcards</h4>
-          <p class="text-[10px] text-text-muted mt-2">Personalized spaced repetition for vocabulary.</p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      {wordsByLevel.map(({ level, count }) => (
+        <div class="glass-card p-4 text-center">
+          <span class={`badge cefr-${level} mb-2`}>{level}</span>
+          <div class="text-2xl font-extrabold text-text">{count}</div>
+          <div class="text-[10px] font-semibold text-text-muted uppercase">words</div>
         </div>
-        <div class="glass p-6 rounded-lg text-center opacity-75 border-dashed border-2">
-          <div class="text-3xl mb-3">🎯</div>
-          <h4 class="font-bold text-sm">Skill Quizzes</h4>
-          <p class="text-[10px] text-text-muted mt-2">Test your level after each lesson modules.</p>
-        </div>
-      </div>
-    </section>
-  </div>
+      ))}
+    </div>
+  </section>
 
-  <style>
-    .grid { display: grid; }
-    .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-    @media (min-width: 768px) { .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (min-width: 1024px) { 
-      .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } 
-      .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    .gap-6 { gap: 1.5rem; }
-    .gap-10 { gap: 2.5rem; }
-    .gap-4 { gap: 1rem; }
-    .mb-12 { margin-bottom: 3rem; }
-    .mb-2 { margin-bottom: 0.5rem; }
-    .mb-6 { margin-bottom: 1.5rem; }
-    .mb-16 { margin-bottom: 4rem; }
-    .mt-6 { margin-top: 1.5rem; }
-    .p-4 { padding: 1rem; }
-    .p-6 { padding: 1.5rem; }
-    .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-    .text-2xl { font-size: 1.5rem; line-height: 2rem; }
-    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-    .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-    .text-xs { font-size: 0.75rem; line-height: 1rem; }
-    .font-extrabold { font-weight: 800; }
-    .max-w-2xl { max-width: 42rem; }
-    .opacity-70 { opacity: 0.7; }
-    .opacity-75 { opacity: 0.75; }
-    .border-dashed { border-style: dashed; }
-    .border-2 { border-width: 2px; }
-  </style>
-</Layout>
+  <!-- Quick Links -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 animate-slide-up" style="animation-delay: 0.4s">
+    <a href="/suffixes/" class="glass-card p-6 no-underline group block">
+      <div class="flex items-center gap-4 mb-3">
+        <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-2xl">🔗</div>
+        <div>
+          <h3 class="text-lg font-bold text-text group-hover:text-secondary transition-colors">Turkish Suffixes</h3>
+          <p class="text-sm text-text-muted">The building blocks of agglutination</p>
+        </div>
+      </div>
+      <p class="text-sm text-text-secondary">
+        Explore {suffixList.length} suffixes with vowel harmony rules, variants, and examples.
+        Understanding suffixes is key to mastering Turkish.
+      </p>
+    </a>
+    <a href="/grammar/" class="glass-card p-6 no-underline group block">
+      <div class="flex items-center gap-4 mb-3">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-2xl">📐</div>
+        <div>
+          <h3 class="text-lg font-bold text-text group-hover:text-accent-dark transition-colors">Grammar Rules</h3>
+          <p class="text-sm text-text-muted">Structured explanations in EN & AR</p>
+        </div>
+      </div>
+      <p class="text-sm text-text-secondary">
+        {grammarRules.length} grammar rules with bilingual explanations, linked suffixes, and real example sentences.
+      </p>
+    </a>
+  </section>
+</BaseLayout>
+

@@ -1,0 +1,13 @@
+id: movement
+title:
+  en: "Movement"
+  ar: "الحركة"
+description:
+  en: "Words related to motion and travel"
+  ar: "كلمات متعلقة بالحركة والسفر"
+icon: "🚶"
+color: "#00B5E2"
+wordRefs: ["gelmek", "gitmek"]
+order: 2
+meta:
+  verified: true

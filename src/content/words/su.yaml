@@ -1,0 +1,33 @@
+id: su
+turkish: su
+pos: noun
+translations:
+  en: "water"
+  ar: "ماء"
+cefr: A1
+frequencyRank: 45
+root: "su"
+relatedWords: []
+tags: ["essential", "core-100"]
+categories: ["food-drink", "daily-life"]
+morphology:
+  root: "su"
+  suffixExamples:
+    - form: "suyu"
+      suffixes: ["-yu"]
+      meaning:
+        en: "the water (accusative)"
+        ar: "الماءَ"
+    - form: "suyun"
+      suffixes: ["-yun"]
+      meaning:
+        en: "of the water"
+        ar: "ماءُ"
+    - form: "sular"
+      suffixes: ["-lar"]
+      meaning:
+        en: "waters"
+        ar: "مياه"
+exampleSentences: ["s007"]
+meta:
+  verified: true

@@ -1,0 +1,89 @@
+nav:
+  home: "Ana Sayfa"
+  words: "Kelimeler"
+  grammar: "Dil Bilgisi"
+  suffixes: "Ekler"
+  practice: "Alıştırma"
+  search: "Arama"
+  dashboard: "Kontrol Paneli"
+
+common:
+  level: "Seviye"
+  frequency: "Sıklık Sırası"
+  root: "Kök"
+  examples: "Örnekler"
+  relatedWords: "İlgili Kelimeler"
+  tags: "Etiketler"
+  categories: "Kategoriler"
+  morphology: "Biçim Bilgisi"
+  conjugation: "Çekim"
+  suffixExamples: "Ek Biçimleri"
+  translations: "Çeviriler"
+  viewAll: "Tümünü Gör"
+  comingSoon: "Yakında"
+  search: "Ara"
+  searchPlaceholder: "Türkçe, İngilizce veya Arapça kelime ara..."
+  noResults: "Sonuç bulunamadı"
+  loading: "Yükleniyor..."
+  back: "Geri"
+  next: "İleri"
+  previous: "Önceki"
+  of: "/"
+  verified: "Doğrulanmış"
+
+pos:
+  noun: "İsim"
+  verb: "Fiil"
+  adjective: "Sıfat"
+  adverb: "Zarf"
+  pronoun: "Zamir"
+  postposition: "İlgeç"
+  conjunction: "Bağlaç"
+  interjection: "Ünlem"
+  determiner: "Belirleyici"
+  particle: "Edat"
+  numeral: "Sayı"
+
+cefr:
+  A1: "Başlangıç"
+  A2: "Temel"
+  B1: "Orta"
+  B2: "Orta Üstü"
+  C1: "İleri"
+  C2: "Ustalık"
+
+home:
+  title: "Türkçe Öğren"
+  subtitle: "Yapılandırılmış ve veri odaklı öğrenme ile Türkçeyi öğren"
+  heroDescription: "İngilizce veya Arapça'dan Türkçe öğrenmek için kapsamlı bir platform."
+  startLearning: "Öğrenmeye Başla"
+  exploreVocab: "Kelimeleri Keşfet"
+  statsWords: "Kelime"
+  statsSentences: "Cümle"
+  statsGrammar: "Dil Bilgisi Kuralı"
+  statsSuffixes: "Ek"
+
+words:
+  title: "Kelimeler"
+  subtitle: "Türkçe kelime veritabanını keşfet ve ara"
+  filterByLevel: "Seviyeye Göre"
+  filterByPOS: "Kelime Türüne Göre"
+  allLevels: "Tüm Seviyeler"
+  allPOS: "Tüm Türler"
+  wordCount: "kelime"
+
+grammar:
+  title: "Dil Bilgisi"
+  subtitle: "Türkçe dil bilgisi kuralları açık ve net"
+
+suffixes:
+  title: "Ekler"
+  subtitle: "Türkçenin yapı taşları — ek sistemini öğren"
+  variants: "Çeşitleri"
+  vowelHarmony: "Ünlü Uyumu"
+  type: "Tür"
+
+footer:
+  developedBy: "Geliştiren"
+  rights: "Tüm Hakları Saklıdır"
+  openSource: "GitHub'da Açık Kaynak"

@@ -1,0 +1,33 @@
+id: okul
+turkish: okul
+pos: noun
+translations:
+  en: "school"
+  ar: "مدرسة"
+cefr: A1
+frequencyRank: 60
+root: "okul"
+relatedWords: ["ogrenci", "ogretmen"]
+tags: ["essential", "core-100"]
+categories: ["education"]
+morphology:
+  root: "okul"
+  suffixExamples:
+    - form: "okulda"
+      suffixes: ["-da"]
+      meaning:
+        en: "at school"
+        ar: "في المدرسة"
+    - form: "okula"
+      suffixes: ["-a"]
+      meaning:
+        en: "to school"
+        ar: "إلى المدرسة"
+    - form: "okullar"
+      suffixes: ["-lar"]
+      meaning:
+        en: "schools"
+        ar: "مدارس"
+exampleSentences: []
+meta:
+  verified: true

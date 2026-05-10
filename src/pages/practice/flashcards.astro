@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FlashcardDeck from '../../components/practice/FlashcardDeck.tsx';
+import { getCollection } from 'astro:content';
+
+const allWords = await getCollection('words');
+
+// Shuffle and prepare word data
+const words = allWords
+  .sort(() => Math.random() - 0.5)
+  .map(w => ({
+    id: w.data.id,
+    turkish: w.data.turkish,
+    en: w.data.translations.en,
+    ar: w.data.translations.ar,
+    cefr: w.data.cefr
+  }));
+---
+
+<BaseLayout title="Flashcards" description="Practice Turkish vocabulary with interactive flip-cards.">
+  <section class="max-w-4xl mx-auto mb-8 animate-fade-in">
+    <div class="flex items-center gap-4 mb-4">
+      <a href="/practice/" class="p-2 rounded-lg hover:bg-surface-hover text-text-muted transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+      </a>
+      <h1 class="text-3xl font-extrabold tracking-tight">
+        📇 <span class="gradient-text">Vocabulary Flashcards</span>
+      </h1>
+    </div>
+    <p class="text-text-secondary text-center max-w-xl mx-auto">
+      Flip the card to see the translation. Mark words as mastered to track your progress!
+    </p>
+  </section>
+
+  <FlashcardDeck client:load words={words} />
+</BaseLayout>

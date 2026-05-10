@@ -1,0 +1,11 @@
+id: s007
+turkish: "Su içmek istiyorum."
+translations:
+  en: "I want to drink water."
+  ar: "أريد أن أشرب ماء."
+cefr: A1
+wordRefs: ["su", "istemek"]
+tags: ["present-continuous", "desire"]
+context: casual
+meta:
+  verified: true

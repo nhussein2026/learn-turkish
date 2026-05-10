@@ -1,0 +1,28 @@
+id: baba
+turkish: baba
+pos: noun
+translations:
+  en: "father, dad"
+  ar: "أب"
+cefr: A1
+frequencyRank: 52
+root: "baba"
+relatedWords: ["anne", "aile"]
+tags: ["essential", "core-100", "family"]
+categories: ["family"]
+morphology:
+  root: "baba"
+  suffixExamples:
+    - form: "babam"
+      suffixes: ["-m"]
+      meaning:
+        en: "my father"
+        ar: "أبي"
+    - form: "babalar"
+      suffixes: ["-lar"]
+      meaning:
+        en: "fathers"
+        ar: "آباء"
+exampleSentences: []
+meta:
+  verified: true

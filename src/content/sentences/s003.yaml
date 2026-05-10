@@ -1,0 +1,11 @@
+id: s003
+turkish: "Okula gidiyorum."
+translations:
+  en: "I am going to school."
+  ar: "أنا ذاهب إلى المدرسة."
+cefr: A1
+wordRefs: ["gitmek", "okul"]
+tags: ["present-continuous", "motion"]
+context: casual
+meta:
+  verified: true
