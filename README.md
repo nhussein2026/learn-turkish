@@ -1,100 +1,43 @@
-# Learn Turkish 🇹🇷
+# Astro Starter Kit: Minimal
 
-A comprehensive, community-driven repository of Turkish language learning materials organized by language preference and proficiency level. Perfect for self-learners, students, and educators looking to master Turkish.
+```sh
+yarn create astro@latest -- --template minimal
+```
 
-## 📚 Repository Overview
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-This repository serves as a centralized hub for Turkish language resources, featuring materials in multiple languages (English, Turkish, and Arabic) to accommodate learners from different backgrounds. All materials are organized systematically to help you progress from beginner (A1) to intermediate (B1) levels.
+## 🚀 Project Structure
 
-## 📁 Repository Structure
+Inside of your Astro project, you'll see the following folders and files:
 
-### English/
-English-language resources for learners who prefer explanations in English.
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-- **1000-most-common-words-in-Turkish.pdf** - Essential vocabulary list covering the most frequently used Turkish words
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-### Turkish/
-Turkish-language materials for native speakers or those comfortable with Turkish explanations.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-- **B1 Çalışma Kitabı.pdf** - B1 level workbook
-- **B1-Çalışma-KİTABI.pdf** - Additional B1 workbook
-- **B1.pdf** - B1 level textbook
-- **YABANCI DILIM TURKCE 2.pdf** - Turkish as a foreign language textbook
-- **Yedi İklim B1 Türkçe Ders.pdf** - B1 Turkish lessons
-- **isim fiil ma me ekleri.docx** - Noun-verb suffixes explanation
-- **madan ıp ip makta ve ma isim fiil eki+şahıs.docx** - Verb suffixes and personal endings
-- **turkish-grammar.pdf** - Comprehensive Turkish grammar guide
+Any static assets, like images, can be placed in the `public/` directory.
 
-### Arabic/
-Arabic-language resources for Arabic-speaking learners.
+## 🧞 Commands
 
-- **اللواحق التركية الهامة.pdf** - Important Turkish suffixes
-- **المصادر و الأفعال.pdf** - Sources and verbs
-- **درس 1.pdf** - Lesson 1
-- **درس 2.pdf** - Lesson 2
-- **درس 3.pdf** - Lesson 3
-- **شرح منهاج الهتيت1،2 3.pdf** - Explanation of Hetit curriculum 1,2,3
-- **قواعد_كافة_مستويات_منهاج_التومر.pdf** - Rules for all levels of Tomer curriculum
-- **كتاب الأزمنة في اللغة التركية.pdf** - Book of tenses in Turkish
-- **كلمات المحاضرة السادسة.pdf** - Words from lecture 6
+All commands are run from the root of the project, from a terminal:
 
-### Additional Files
-- **UZ - 13 Nisan 2020 (2).pdf** & **UZ - 13 Nisan 2020.pdf** - Supplementary materials
-- **istanbul_a1_ders_kitabi.pdf** - Istanbul A1 textbook
-- **WhatsApp Image 2020-04-30 at 2.57.38 PM.jpeg** & **WhatsApp Image 2020-05-06 at 10.16.44 AM.jpeg** - Reference images
-- **200_onemli_kelime_pdf.pdf** - 200 important words
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `yarn install`             | Installs dependencies                            |
+| `yarn dev`             | Starts local dev server at `localhost:4321`      |
+| `yarn build`           | Build your production site to `./dist/`          |
+| `yarn preview`         | Preview your build locally, before deploying     |
+| `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `yarn astro -- --help` | Get help using the Astro CLI                     |
 
-## 🎯 Learning Levels
+## 👀 Want to learn more?
 
-- **A1 (Beginner)**: Basic vocabulary, simple grammar, everyday conversations
-- **B1 (Intermediate)**: Expanded vocabulary, complex grammar, professional communication
-
-## 🚀 Getting Started
-
-1. **Choose your language**: Select the folder that matches your preferred explanation language
-2. **Assess your level**: Start with A1 materials if you're a beginner, B1 for intermediate learners
-3. **Study systematically**: Follow the curriculum order in the materials
-4. **Practice regularly**: Use the workbooks and exercises provided
-
-## 🤝 Contributing
-
-We believe in collaborative learning! This repository thrives on community contributions. If you have:
-
-- Additional learning materials
-- Corrections to existing content
-- Translations to other languages
-- Study tips and resources
-- Improved organization suggestions
-
-Please see our [CONTRIBUTING.md](CONTRIBUTING.md) file for detailed guidelines on how to contribute.
-
-### Ways to Contribute:
-- Add new materials you've found helpful
-- Improve existing documentation
-- Translate materials to additional languages
-- Organize content better
-- Share your learning experiences
-
-## 📖 Study Tips
-
-- **Consistency is key**: Practice daily, even if only for 15-30 minutes
-- **Combine resources**: Use materials from different folders for comprehensive learning
-- **Practice speaking**: Turkish is a phonetic language - practice pronunciation regularly
-- **Use CEFR guidelines**: Materials are aligned with Common European Framework of Reference levels
-
-## 📄 License
-
-This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. All materials are shared for educational purposes.
-
-## 🙏 Acknowledgments
-
-Special thanks to all contributors and the Turkish learning community for making language learning accessible to everyone.
-
----
-
-**Happy learning! If you find this repository helpful, please ⭐ star it and share with fellow learners!**
-
-*Created with ❤️ for Turkish language enthusiasts worldwide*</content>
-# learn-turkish
-# learn-turkish
-# learn-turkish
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
